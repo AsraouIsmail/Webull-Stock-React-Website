@@ -1,6 +1,6 @@
 /* eslint-disable no-unused-vars */
 import React from "react";
-import styled from "styled-components";
+import styled from "styled-components/macro";
 import LogoImg from "../assets/logo.svg";
 import { Link } from "react-router-dom";
 
@@ -23,7 +23,14 @@ const Navbar = () => {
           </SearchWrap>
         </Search>
         <ButtonContainer>
-          <Button>SIGN UP</Button>
+          <Button
+            css={`
+              color: #037cff;
+              background: #fff;
+            `}
+          >
+            SIGN UP
+          </Button>
           <Button>LOGIN</Button>
         </ButtonContainer>
       </NavbarWrap>
@@ -61,7 +68,7 @@ const Nav = styled.nav`
   position: relative;
   padding-left: 50px;
 `
-const NavLink = styled.div`
+const NavLink = styled(Link)`
   color: #000;
   padding: 0 15px;
   font-size: 16px;
